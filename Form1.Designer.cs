@@ -32,6 +32,7 @@
             txtID = new TextBox();
             txtPW = new TextBox();
             btnLogin = new Button();
+            lblErrorMsg = new Label();
             SuspendLayout();
             // 
             // lblAppName
@@ -81,11 +82,24 @@
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click;
             // 
+            // lblErrorMsg
+            // 
+            lblErrorMsg.AutoSize = true;
+            lblErrorMsg.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            lblErrorMsg.ForeColor = Color.Red;
+            lblErrorMsg.Location = new Point(129, 292);
+            lblErrorMsg.Name = "lblErrorMsg";
+            lblErrorMsg.Size = new Size(230, 15);
+            lblErrorMsg.TabIndex = 3;
+            lblErrorMsg.Text = "아이디 또는 비밀번호가 잘못 되었습니다.";
+            lblErrorMsg.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(508, 450);
+            Controls.Add(lblErrorMsg);
             Controls.Add(btnLogin);
             Controls.Add(txtPW);
             Controls.Add(txtID);
@@ -102,5 +116,6 @@
         private TextBox txtID;
         private TextBox txtPW;
         private Button btnLogin;
+        private Label lblErrorMsg;
     }
 }

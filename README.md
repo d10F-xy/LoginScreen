@@ -55,3 +55,20 @@
 - placeholder 기능 구현: TextBox의 Enter 이벤트에서 placeholder 텍스트 제거 및 색상 변경, Leave 이벤트에서 입력이 없을 경우 placeholder 텍스트와 색상 복원
 - Enter 키 입력 시 다음 TextBox로 포커스 이동 및 로그인 버튼 클릭 이벤트 실행, 기본 키보드 입력 방지
 - UseSystemPasswordChar 속성을 활용하여 패스워드 입력 시 보안 강화
+
+## 실행 화면 (과제2)
+- 과제2 코드의 실행 스크린샷
+
+![과제2 실행화면](img/task2-1.png)
+![과제2 실행화면](img/task2-2.png)
+![과제2 실행화면](img/task2-3.png)
+![과제2 실행화면](img/task2-4.png)
+![과제2 실행화면](img/task2-5.png)
+
+- 과제 내용
+1. Label 컨트롤 추가
+2. Visible 속성을 이용해서 메시지 보이기와 숨기기 기능 구현
+
+- 구현 내용과 기능 설명
+- Label 컨트롤을 추가하여 로그인 성공/실패 메시지를 표시하는 방식으로 변경
+- UI 요소의 Visible 속성을 활용하여 로그인 결과 메시지의 표시 여부를 제어하는 로직 구현
