@@ -69,5 +69,23 @@ namespace LoginScreen
                 txtPW.ForeColor = Color.Silver;
             }
         }
+
+        private void txtID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // 기본 비프음 방지
+                txtPW.Focus(); // 패스워드 입력 창이 포커스를 갖게끔
+            }
+        }
+
+        private void txtPW_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // 기본 비프음 방지
+                btnLogin.PerformClick(); // 버튼이 눌린 것처럼 이벤트 발생
+            }
+        }
     }
 }
