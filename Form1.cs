@@ -13,44 +13,60 @@ namespace LoginScreen
         {
             InitializeComponent();
 
-            SetPlaceholder(loginIdBox, "ID");
-            SetPlaceholder(loginPwBox, "Password");
         }
 
-        public void SetPlaceholder(TextBox textBox, string promptText)
+        string myID = "admin";
+        string myPW = "superman";
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-            SendMessage(textBox.Handle, EM_SETCUEBANNER, 0, promptText);
-        }
+            string inputID = txtID.Text;
+            string inputPW = txtPW.Text;
 
-        private void loginButton_Click(object sender, EventArgs e)
-        {
-            // 1. 공백 검사 (Trim()은 앞뒤 공백 제거)
-            if (string.IsNullOrWhiteSpace(loginIdBox.Text))
+            if (inputID == myID && inputPW == myPW)
             {
-                MessageBox.Show("아이디를 입력해주세요.");
-                loginIdBox.Focus(); // 해당 칸으로 커서 이동
-                return; // 함수 종료
-            }
-
-            if (string.IsNullOrWhiteSpace(loginPwBox.Text))
-            {
-                MessageBox.Show("비밀번호를 입력해주세요.");
-                loginPwBox.Focus();
-                return;
-            }
-
-            // 2. 실제 아이디/비밀번호 매칭 검사 (예시)
-            string correctId = "admin";
-            string correctPw = "1234";
-
-            if (loginIdBox.Text == correctId && loginPwBox.Text == correctPw)
-            {
-                loginInfoWrong.Visible = false; // 로그인 정보 틀렸다는 메시지 숨김
                 MessageBox.Show("로그인 성공!");
             }
             else
             {
-                loginInfoWrong.Visible = true;
+                MessageBox.Show("로그인 실패~");
+            }
+        }
+
+        private void txtID_Enter(object sender, EventArgs e)
+        {
+            if (txtID.Text == "아이디")
+            {
+                txtID.Text = "";
+                txtID.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtID_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtID.Text))
+            {
+                txtID.Text = "아이디";
+                txtID.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txtPW_Enter(object sender, EventArgs e)
+        {
+            if (txtPW.Text == "비밀번호")
+            {
+                txtPW.Text = "";
+                txtPW.UseSystemPasswordChar = true;
+                txtPW.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtPW_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtPW.Text))
+            {
+                txtPW.Text = "비밀번호";
+                txtPW.UseSystemPasswordChar = false;
+                txtPW.ForeColor = Color.Silver;
             }
         }
     }
