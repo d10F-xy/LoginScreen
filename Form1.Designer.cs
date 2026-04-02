@@ -32,6 +32,9 @@
             loginIdBox = new TextBox();
             loginPwBox = new TextBox();
             loginButton = new Button();
+            loginInfoWrong = new Label();
+            idLabel = new Label();
+            passwordLabel = new Label();
             SuspendLayout();
             // 
             // Title
@@ -55,7 +58,7 @@
             // loginPwBox
             // 
             loginPwBox.Font = new Font("맑은 고딕", 13F);
-            loginPwBox.Location = new Point(104, 264);
+            loginPwBox.Location = new Point(104, 249);
             loginPwBox.Name = "loginPwBox";
             loginPwBox.Size = new Size(284, 31);
             loginPwBox.TabIndex = 1;
@@ -71,11 +74,46 @@
             loginButton.UseVisualStyleBackColor = true;
             loginButton.Click += loginButton_Click;
             // 
+            // loginInfoWrong
+            // 
+            loginInfoWrong.AutoSize = true;
+            loginInfoWrong.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            loginInfoWrong.ForeColor = Color.Red;
+            loginInfoWrong.Location = new Point(140, 294);
+            loginInfoWrong.Name = "loginInfoWrong";
+            loginInfoWrong.Size = new Size(218, 15);
+            loginInfoWrong.TabIndex = 3;
+            loginInfoWrong.Text = "아이디 혹은 비밀번호가 맞지 않습니다.";
+            loginInfoWrong.Visible = false;
+            // 
+            // idLabel
+            // 
+            idLabel.AutoSize = true;
+            idLabel.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            idLabel.Location = new Point(104, 162);
+            idLabel.Name = "idLabel";
+            idLabel.Size = new Size(47, 17);
+            idLabel.TabIndex = 4;
+            idLabel.Text = "아이디";
+            // 
+            // passwordLabel
+            // 
+            passwordLabel.AutoSize = true;
+            passwordLabel.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            passwordLabel.Location = new Point(104, 229);
+            passwordLabel.Name = "passwordLabel";
+            passwordLabel.Size = new Size(60, 17);
+            passwordLabel.TabIndex = 4;
+            passwordLabel.Text = "비밀번호";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(508, 450);
+            Controls.Add(passwordLabel);
+            Controls.Add(idLabel);
+            Controls.Add(loginInfoWrong);
             Controls.Add(loginButton);
             Controls.Add(loginPwBox);
             Controls.Add(loginIdBox);
@@ -92,5 +130,8 @@
         private TextBox loginIdBox;
         private TextBox loginPwBox;
         private Button loginButton;
+        private Label loginInfoWrong;
+        private Label idLabel;
+        private Label passwordLabel;
     }
 }

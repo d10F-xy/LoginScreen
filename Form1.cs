@@ -13,8 +13,8 @@ namespace LoginScreen
         {
             InitializeComponent();
 
-            SetPlaceholder(loginIdBox, "아이디");
-            SetPlaceholder(loginPwBox, "비밀번호");
+            SetPlaceholder(loginIdBox, "ID");
+            SetPlaceholder(loginPwBox, "Password");
         }
 
         public void SetPlaceholder(TextBox textBox, string promptText)
@@ -45,11 +45,12 @@ namespace LoginScreen
 
             if (loginIdBox.Text == correctId && loginPwBox.Text == correctPw)
             {
+                loginInfoWrong.Visible = false; // 로그인 정보 틀렸다는 메시지 숨김
                 MessageBox.Show("로그인 성공!");
             }
             else
             {
-                MessageBox.Show("아이디 또는 비밀번호가 틀렸습니다.");
+                loginInfoWrong.Visible = true;
             }
         }
     }
